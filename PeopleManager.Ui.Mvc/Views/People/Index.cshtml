@@ -1,0 +1,25 @@
+﻿@model IList<Person>
+@{
+    ViewBag.Title = "People List";
+}
+
+
+
+<div class="container mt-5">
+    <h2>@ViewBag.Title</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email Address</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var person in Model)
+        {
+            <partial name="PersonRowPartial" model="person"/>
+        }
+        </tbody>
+    </table>
+</div>
